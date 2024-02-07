@@ -1,8 +1,5 @@
 // db.js
 
-// import and configure .env
-require('dotenv').config()
-
 const { Pool } = require('pg');
 
 const pool = new Pool({
@@ -10,7 +7,7 @@ const pool = new Pool({
   host: 'localhost',
   database: 'boba',
   password: process.env.POSTGRES_PASS,
-  port: 5432,
+  port: process.env.POSTGRES_PORT,
 });
 
 module.exports = pool;
